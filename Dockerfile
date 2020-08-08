@@ -47,8 +47,8 @@ RUN dpkg -i code-server_3.4.1_amd64.deb
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
-# Install cz-cli
-RUN npm install cz-cli -g
+# Install git-cz
+RUN npm install git-cz -g
 
 # Install oh my zsh
 RUN apt-get install zsh -y
