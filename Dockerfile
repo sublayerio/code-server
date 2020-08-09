@@ -86,11 +86,18 @@ RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 RUN usermod -aG sudo coder
 RUN usermod -aG docker coder
 
+RUN apt-get install -y \
+     iputils-ping
+
 # RUN service docker start
+
+COPY entrypoint.sh /srv
+RUN chmod +x /srv/entrypoint.sh
 
 EXPOSE 8080
 USER coder
 WORKDIR /home/coder
-COPY entrypoint.sh .
-RUN sudo chmod +x ./entrypoint.sh
-ENTRYPOINT ./entrypoint.sh
+
+# This is where volume mount happens
+
+ENTRYPOINT /srv/entrypoint.sh
