@@ -53,9 +53,10 @@ RUN npm install git-cz -g
 # Install oh my zsh
 RUN apt-get install zsh -y
 RUN apt-get install powerline fonts-powerline -y
-RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-RUN chsh -s /bin/zsh
+# RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+# RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+# RUN chsh -s /bin/zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install docker
 
