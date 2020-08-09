@@ -99,6 +99,8 @@ EXPOSE 8080
 USER coder
 WORKDIR /home/coder
 
+RUN mkdir projects
+
 ENV SHELL /usr/bin/zsh
 
 # This is where volume mount happens

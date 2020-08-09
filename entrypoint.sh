@@ -7,4 +7,4 @@ if [ ! -d "/home/coder/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-dumb-init fixuid -q /usr/bin/code-server --bind-addr 0.0.0.0:8080 --auth none .
+dumb-init fixuid -q /usr/bin/code-server --bind-addr 0.0.0.0:8080 /home/coder/projects
